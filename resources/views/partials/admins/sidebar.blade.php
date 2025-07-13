@@ -24,22 +24,22 @@
             </a>
         </li>
     @if(in_array($role, ['superadmin', 'admin']))
-        {{-- <li>
+        <li>
             <a href="{{route("authManage.$role")}}" class="nav-link ps-3 rounded-3 {{ request()->is("$role/manajemen-autentikasi","admin/manajemen-autentikasi") ? 'active' : '' }}" onclick="showLoading('swipe')">
                 <img src="{{ asset('images/auth.png') }}" width="20" alt="">
                 <span class="ms-3 label-text">Manajemen Autentikasi</span>
             </a>
-        </li> --}}
+        </li>
     @endif
     @if($role !== 'admin' && $role !== 'employee')
         {{-- ASKES MENU : Superadmin --}}
-        {{-- <li>
+        <li>
 
             <a href="{{route('departementManage.superadmin')}}" class="nav-link ps-3 rounded-3 {{ request()->is('superadmin/manajemen-departemen') ? 'active' : '' }}" onclick="showLoading('swipe')">
                 <img src="{{ asset('images/departement.png') }}" width="20" alt="">
                 <span class="ms-3 label-text">Manajemen Departemen</span>
             </a>
-        </li> --}}
+        </li>
         {{-- ASKES MENU : Superadmin --}}
         <li>
             <a href="{{route('adminManage.superadmin')}}" class="nav-link ps-3 rounded-3 {{ request()->is('superadmin/manajemen-admin') ? 'active' : '' }}" onclick="showLoading('swipe')">

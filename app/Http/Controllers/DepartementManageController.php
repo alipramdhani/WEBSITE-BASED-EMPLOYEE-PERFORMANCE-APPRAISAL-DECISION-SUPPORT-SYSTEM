@@ -4,12 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use App\Models\Departement;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DepartementManageController extends Controller
 {
     public function showDepartementManage()
     {
+        //======== cek title sesuai role =========
+        $userRole = Auth::user()->role;
+
+        $users = User::when(
+            $userRole === 'superadmin',
+            fn($q) => $q->where('role', 'superadmin'),
+            fn($q) => $q->where('role', 'admin'),
+            fn($q) => $q->where('role', 'employee'),
+        )->get();
+        //======== cek title sesuai role =========
+
         $departements = Departement::all();
         return view('layouts.superadmins.departementManage', compact('departements'));
     }
