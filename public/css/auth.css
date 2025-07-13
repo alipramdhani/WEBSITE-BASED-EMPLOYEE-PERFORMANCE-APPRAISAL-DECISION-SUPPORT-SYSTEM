@@ -1,0 +1,43 @@
+:root {
+    --background-footer: #8b254f;
+    --text-color: #333333;
+    --text-footer: #ffffff;
+    --background-color: #f8f9fa;
+}
+
+* {
+    font-family: "inter", sans-serif;
+    font-size: 14px;
+}
+
+.container-fluid {
+    background-color: var(--background-color);
+}
+
+#footer {
+    background-color: var(--background-footer);
+    color: var(--text-footer);
+}
+#footer .nav-link {
+    color: var(--text-footer);
+}
+#footer img {
+    transition: all 0.3s ease;
+}
+#footer .nav-link:hover {
+    color: var(--text-footer);
+    background-color: #9e2b5b;
+}
+#footer img:hover {
+    filter: opacity(0.6);
+}
+#footer .accordion-button {
+    background-color: var(--background-footer);
+    color: var(--text-footer);
+    border: none;
+}
+#footer .accordion-body {
+    background-color: var(--background-footer);
+    color: var(--text-footer);
+    border: none;
+}
