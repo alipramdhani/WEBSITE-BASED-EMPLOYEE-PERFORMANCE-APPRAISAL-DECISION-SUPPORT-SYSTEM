@@ -23,7 +23,7 @@ class DepartementManageController extends Controller
         //======== cek title sesuai role =========
 
         $departements = Departement::all();
-        return view('layouts.superadmins.departementManage', compact('departements'));
+        return view('layouts.superadmins.departementManage', compact('departements', 'userRole'));
     }
 
     public function create(Request $request)
